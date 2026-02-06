@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>You Said Yes 💖</title>
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.box {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    z-index: 2;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.flower {
+    position: absolute;
+    font-size: 24px;
+    animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10vh); opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+    <h1>I know you love me 💖</h1>
+    <p>You really deserve some flowers 🌸🌹🌷</p>
+</div>
+
+<script>
+const flowers = ["🌸","🌹","🌷","💐"];
+for (let i = 0; i < 25; i++) {
+    let f = document.createElement("div");
+    f.className = "flower";
+    f.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
+    f.style.left = Math.random() * 100 + "vw";
+    f.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    document.body.appendChild(f);
+}
+</script>
+
+</body>
+</html>
